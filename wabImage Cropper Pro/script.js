@@ -147,7 +147,7 @@ class ImageEditor {
 
                     if (key.includes('fetch')) {
                         // เฟส 1: Real Progress (การดาวน์โหลดโมเดล)
-                        currentPercent = (current / total) * 40; // 40% แรก
+                        currentPercent = (current / total) * 0; // 40% แรก
                         if (this.loadingPercent) {
                             this.loadingPercent.innerText = `${Math.round(currentPercent)}%`;
                         }
@@ -156,7 +156,7 @@ class ImageEditor {
                         // ตัวเลขจริงจะค้าง/กระโดด เราเริ่มใช้ Simulated Progress แทน
                         
                         // ให้ตัวเลขกระโดดไปที่ฐาน 45% (40% Fetch + 5% Compute เริ่มต้น)
-                        const startSmoothFrom = Math.max(45, Math.round(currentPercent));
+                        const startSmoothFrom = Math.max(1, Math.round(currentPercent));
                         
                         // เริ่มแอนิเมชันให้วิ่งจาก 45% ไปจนถึง 99% อย่างช้าๆ
                         startSmoothAnimation(startSmoothFrom);
